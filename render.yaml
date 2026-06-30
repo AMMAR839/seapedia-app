@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: seapedia-comfest18
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: SEAPEDIA_SECRET_KEY
+        generateValue: true

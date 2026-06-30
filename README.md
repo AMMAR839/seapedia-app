@@ -408,3 +408,4 @@ git commit -m "add security hardening and documentation"
 ```
 
 The submitted ZIP already contains a local git history if the `.git` folder is preserved. If your platform strips hidden folders, use the commands above after extracting and before pushing.
+# seapedia-app

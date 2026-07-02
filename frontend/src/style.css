@@ -65,7 +65,7 @@ button { cursor: pointer; }
   border-radius: 12px;
   background:
     linear-gradient(90deg, rgba(5, 21, 47, .88) 0%, rgba(5, 21, 47, .72) 39%, rgba(5, 21, 47, .18) 74%),
-    url("/static/seapedia-hero.png") center / cover;
+    url("/seapedia-hero.png") center / cover;
   color: white;
   padding: 42px;
   box-shadow: var(--shadow);
@@ -169,6 +169,7 @@ button { cursor: pointer; }
 .product-media.latest {
   aspect-ratio: 4 / 3;
   height: auto;
+  min-height: 190px;
   border-right: 0;
   border-bottom: 1px solid var(--border);
 }
@@ -182,6 +183,7 @@ button { cursor: pointer; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 .product-card .product-media img {
   transition: transform .2s ease;
@@ -211,7 +213,7 @@ button { cursor: pointer; }
   color: white;
   background:
     linear-gradient(145deg, rgba(20, 99, 255, .95), rgba(18, 184, 134, .9)),
-    url("/static/seapedia-hero.png") center / cover;
+    url("/seapedia-hero.png") center / cover;
   box-shadow: var(--shadow);
   min-width: 0;
 }
@@ -348,6 +350,7 @@ th { color: #334155; font-size: 13px; }
 .error { background: #fff5f5; color: #c92a2a; border-color: #ffc9c9; }
 .success { background: #ebfbee; color: #087f5b; border-color: #b2f2bb; }
 .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.actions.spread { justify-content: space-between; align-items: center; }
 .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0; }
 .tabs button { border: 1px solid var(--border); background: white; color: var(--text); padding: 10px 12px; border-radius: 8px; font-weight: 800; }
 .tabs button.active { background: var(--text); color: white; }
@@ -360,6 +363,13 @@ th { color: #334155; font-size: 13px; }
 .notification-panel .card.unread { border-color: var(--primary); background: #f8fbff; }
 .notification-panel h2 { margin: 0; }
 .json-box { margin: 0; max-height: 320px; overflow: auto; padding: 14px; border-radius: 8px; background: #0f172a; color: #e2e8f0; font-size: 13px; line-height: 1.5; }
+.dashboard-stack, .metric-row, .compact-form { margin-top: 16px; }
+.dashboard-stack { display: grid; gap: 16px; }
+.compact-form { align-items: end; }
+.inset-panel { margin-top: 16px; box-shadow: none; background: #f8fafc; }
+.qty-input { max-width: 84px; }
+.role-picker { max-width: 680px; margin: 24px auto 0; }
+.footer { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
 @media (max-width: 860px) {
   .grid.cols-2, .grid.cols-3, .grid.cols-4, .form-grid { grid-template-columns: 1fr; }
   .navbar { align-items: flex-start; flex-direction: column; }

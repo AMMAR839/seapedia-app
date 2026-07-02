@@ -1,0 +1,22 @@
+{
+  "name": "seapedia-comfest18",
+  "version": "3.0.0",
+  "description": "SEAPEDIA COMPFEST 18 marketplace challenge with Express.js backend and Vue.js frontend",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "backend:start": "node server.js",
+    "frontend:dev": "npm run dev --prefix frontend",
+    "frontend:build": "npm run build --prefix frontend",
+    "frontend:preview": "npm run preview --prefix frontend",
+    "build": "npm run frontend:build",
+    "test": "node --test tests/e2e.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

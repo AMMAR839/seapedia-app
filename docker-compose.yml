@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      SEAPEDIA_SECRET_KEY: "replace-this-with-a-strong-secret"
+      SEAPEDIA_DATA_FILE: /data/seapedia-data.json
+    ports:
+      - "8000:8000"
+    volumes:
+      - seapedia-data:/data
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  seapedia-data:

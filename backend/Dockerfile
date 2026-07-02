@@ -1,20 +1,18 @@
-FROM node:22-alpine AS frontend-build
-WORKDIR /app/frontend
-COPY frontend/package*.json ./
-RUN npm ci
-COPY frontend/ ./
-RUN npm run build
-
 FROM node:22-alpine
+
 WORKDIR /app
+
 ENV NODE_ENV=production
 ENV SEAPEDIA_HOST=0.0.0.0
 ENV SEAPEDIA_PORT=8000
+ENV SEAPEDIA_DATA_FILE=/data/seapedia-data.json
+
 COPY package*.json ./
 RUN npm ci --omit=dev
+
 COPY server.js ./
 COPY backend/src ./backend/src
 COPY app/static ./app/static
-COPY --from=frontend-build /app/frontend/dist ./frontend/dist
+
 EXPOSE 8000
 CMD ["npm", "start"]
